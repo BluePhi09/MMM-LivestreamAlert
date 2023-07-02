@@ -1,4 +1,4 @@
-Module.register('MMM-TwitchAlert',{
+Module.register('MMM-LivestreamAlert',{
 	// Setting module config
 	defaults: {
 		streamerData: [],
@@ -120,7 +120,7 @@ Module.register('MMM-TwitchAlert',{
 	},
 
 	getStyles: function(){
-		return ["modules/MMM-TwitchAlert/public/MMM-TwitchAlert.css"];
+		return ["modules/MMM-LivestreamAlert/public/MMM-LivestreamAlert.css"];
 	},
 	
 	// Starting module
@@ -172,7 +172,7 @@ Module.register('MMM-TwitchAlert',{
 	// Displaying the object to the mirror
 	getDom: function(){
 		var container = document.createElement('div');
-		container.className = "mmm-twitchalert-container";
+		container.className = "mmm-livestreamalert-container";
 
 		// if still loading data
 		if(this.config.loading){
@@ -194,13 +194,13 @@ Module.register('MMM-TwitchAlert',{
 			if(!this.config.live_only || streamer.is_live){
 				// Streamer object
 				let li = document.createElement('li');
-				li.className = 'mmm-twitchalert-li' + (this.config.alignment === 'right' ? ' mmm-twitchalert-right-align' : '');
+				li.className = 'mmm-livestreamalert-li' + (this.config.alignment === 'right' ? ' mmm-livestreamalert-right-align' : '');
 				container.appendChild(li);
 				
 				// Add image div for case a: streamer is live and we need live badge AND / OR need streamer image
 				if((streamer.is_live && this.config.show_live_badge) || (streamer.is_live && this.config.show_streamer_image)) {
 					var imgDiv = document.createElement('div');
-					imgDiv.className = 'mmm-twitchalert-imgdiv';
+					imgDiv.className = 'mmm-livestreamalert-imgdiv';
 					li.appendChild(imgDiv);
 				}
 
@@ -208,7 +208,7 @@ Module.register('MMM-TwitchAlert',{
 				if(streamer.is_live && this.config.show_streamer_image){
 					let img = document.createElement('img');
 					img.src = streamer.thumbnail_url;
-					if(!streamer.is_live && this.config.show_streamer_image){img.className='mmm-twitchalert-grayscale'}
+					if(!streamer.is_live && this.config.show_streamer_image){img.className='mmm-livestreamalert-grayscale'}
 					imgDiv.appendChild(img);
 				}
 
@@ -216,13 +216,13 @@ Module.register('MMM-TwitchAlert',{
 				if(streamer.is_live && this.config.show_live_badge){
 					let live = document.createElement('h3');
 					live.innerHTML = 'LIVE';
-					live.className = 'mmm-twitchalert-live';
+					live.className = 'mmm-livestreamalert-live';
 					imgDiv.appendChild(live);
 				}
 	
 				// Add text div
 				let txtDiv = document.createElement('div');
-				txtDiv.className = 'mmm-twitchalert-txtdiv';
+				txtDiv.className = 'mmm-livestreamalert-txtdiv';
 				li.appendChild(txtDiv);
 	
 				// Add header
