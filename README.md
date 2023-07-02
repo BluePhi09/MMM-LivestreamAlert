@@ -1,4 +1,4 @@
-# MMM-TwitchAlert
+# MMM-LivestreamAlert
 ![Node Badge](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Node Badge](https://img.shields.io/badge/Twitch-9146FF?style=for-the-badge&logo=twitch&logoColor=white) \
 Keep updated on your favourite streamers with this neat module. You can see when streamers are live and what game they are playing at a glance.
 
@@ -28,7 +28,7 @@ Don't worry, this is easy and well documented if you have troubles!
 Add this to your MagicMirror config file
 ```javascript
 {
-    module: "MMM-TwitchAlert",
+    module: "MMM-LivestreamAlert",
     position: "bottom_left",
     config: {
         client_id: "INSERT_CLIENT_ID_HERE",
