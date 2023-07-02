@@ -28,21 +28,34 @@ Don't worry, this is easy and well documented if you have troubles!
 Add this to your MagicMirror config file
 ```javascript
 {
-    module: "MMM-LivestreamAlert",
-    position: "bottom_left",
-    config: {
-        client_id: "INSERT_CLIENT_ID_HERE",
-        client_secret: "INSERT_CLIENT_SECRET_HERE",
-        // live_only: false,
-        // show_live_badge: false,
-        // update_interval: 3, //minutes
-        // alignment: 'right'
-        streamers: [
-            "papashlomo",
-            "xqcow",
-            "ludwig",
-        ],
+  module: "MMM-LivestreamAlert",
+  position: "bottom_left",
+  config: {
+    // YouTube API Konfiguration
+    youtube: {
+      api_key: "INSERT_YOUTUBE_API_KEY_HERE",
+      streamers: [
+        "UCPdjC9KebHtAPxjDUenL6eQ", // YouTube-Channel-ID des ersten Streamers
+        "UC1nPLmA6iKv3bl7RjFzFEwQ", // YouTube-Channel-ID des zweiten Streamers
+        "UC-lHJZR3Gqxm24_Vd_AJ5Yw", // YouTube-Channel-ID des dritten Streamers
+      ],
     },
+    // Twitch API Konfiguration
+    twitch: {
+      client_id: "INSERT_TWITCH_CLIENT_ID_HERE",
+      client_secret: "INSERT_TWITCH_CLIENT_SECRET_HERE",
+      streamers: [
+        "papashlomo",
+        "xqcow",
+        "ludwig",
+      ],
+    },
+    live_only: true, // Nur Live-Streams anzeigen
+    show_live_badge: true, // Zeige das "LIVE"-Badge für Live-Streams
+    show_streamer_image: true, // Zeige das Streamer-Bild
+    update_interval: 5, // Aktualisierungsintervall in Minuten
+    alignment: "left", // Ausrichtung (left oder right)
+  },
 },
 ```
 
