@@ -11,7 +11,7 @@ Don't worry, this is easy and well documented if you have troubles!
 
 ### Installation
 1. `cd modules` from your MagicMirror folder
-2. `git clone https://github.com/WilliamFitzjohn/MMM-TwitchAlert.git`
+2. `git clone https://github.com/BluePhi09/MMM-LivestreamAlert.git`
 
 ### API Key
 1. Navigate to https://dev.twitch.tv/login and login using your twitch account.
