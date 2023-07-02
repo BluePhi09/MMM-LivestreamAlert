@@ -9,7 +9,7 @@ module.exports = NodeHelper.create({
     // Talking to frontend js
     socketNotificationReceived(notification, payload) {
         // console.log(notification,payload)
-        let path = process.cwd()+'/modules/MMM-TwitchAlert/TOKEN';
+        let path = process.cwd()+'/modules/MMM-LivestreamAlert/TOKEN';
 		// Checking message type
 		if (notification === 'STORE_API_TOKEN') {
             // console.log('Storing token: ', payload); 
